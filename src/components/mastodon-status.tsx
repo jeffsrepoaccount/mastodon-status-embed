@@ -54,8 +54,7 @@ export class MastodonStatus {
       return;
     }
 
-    let content = this.content,
-      externalUrl = this.externalUrl
+    let content = this.content
 
     return (
       <div class="wrapper">

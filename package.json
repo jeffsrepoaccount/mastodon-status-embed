@@ -2,9 +2,11 @@
   "name": "mastodon-status-embed",
   "version": "0.0.1",
   "description": "Web component for embedding a mastodon status by status id",
-  "main": "dist/mastodon-status.esm.js",
-  "main": "dist/mastodon-status.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
   "files": [
     "dist/",
     "loader/"
