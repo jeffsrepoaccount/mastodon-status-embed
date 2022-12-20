@@ -1,0 +1,15 @@
+www/
+loader/
+*~
+*.lock
+*.tmp
+*.tmp.*
+.stencil/
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+node_modules/
+$RECYCLE.BIN/
+.DS_Store
+Thumbs.db
