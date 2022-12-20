@@ -16,6 +16,6 @@ This package utilizes font-awesome version 6. Since it is a web component making
 
 ### Usage
 ```html
-<mastodon-status-embed status-id="<the status id>" instance="<mastodon instance>"></mastodon-status-embed>
+<mastodon-status status-id="<the status id>" instance="<mastodon instance>"></mastodon-status>
 ```
 

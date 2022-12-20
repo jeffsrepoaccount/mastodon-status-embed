@@ -9,7 +9,6 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/mastodon-status-embed.js",
   "files": [
     "dist/",
     "loader/"
@@ -32,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:codesyntax/mastodon-share-button.git"
+    "url": "git+ssh://git@github.com:jeffsrepoaccount/mastodon-status-embed.git"
   },
   "keywords": [
     "mastodon",
