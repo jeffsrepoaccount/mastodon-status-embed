@@ -12,13 +12,13 @@ div.header {
 
 div.content {
     font-size: 1.3rem;
+    min-height: 5rem;
 }
 
 div.footer {
     border-top: 1px solid #aaa;
     padding-top: 0.5rem;
-    /*display: flex;
-    flex-direction: row;*/
+    min-height: 2rem;
 }
 
 div.footer i {
@@ -31,11 +31,6 @@ div.footer span {
 
 div.footer span.right {
     float: right;
-}
-
-span.footer-item {
-    /*flex: 1 1 auto;
-    text-align: center;*/
 }
 
 span.avatar img {
@@ -51,4 +46,18 @@ span.author {
 
 span.post-date {
     float: right;
+}
+
+div.animated {
+  /*background-color: #f3f3f3;*/
+  background: linear-gradient(to right, #ccc 5%, #eee 20%, #ccc 35%);
+  /*background: linear-gradient(to left, #000 0%,#fff 50%,#000 100%);*/
+  animation: placeholderShimmer 2s linear 0s infinite normal forwards;
+}
+
+@keyframes placeholderShimmer {
+  0%
+    background-position: -500px 0;
+  100%
+    background-position: 500px 0;
 }

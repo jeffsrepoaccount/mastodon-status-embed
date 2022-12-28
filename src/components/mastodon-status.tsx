@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core'
+import { Component, Prop, State, h } from '@stencil/core'
 import axios from 'axios'
 import { format } from 'date-fns'
 
@@ -11,7 +11,8 @@ export class MastodonStatus {
   @Prop() statusId!: string
   @Prop() instance!: string
 
-  content: string
+  @State() content: string
+  @State() hasError: boolean = false
   posted: Date
   externalUrl: string
   replies: number
@@ -22,12 +23,14 @@ export class MastodonStatus {
   username: string
   authorAvatar: string
 
-  componentWillRender() {
+  componentDidLoad() {
     if(!this.statusId) {
+      this.hasError = true
       throw new Error('status-id is a required property')
     }
 
     if(!this.instance) {
+      this.hasError = true
       throw new Error('instance is a required property')
     }
 
@@ -45,13 +48,14 @@ export class MastodonStatus {
         this.displayName = response.data.account.display_name
         this.username = response.data.account.username
         this.authorAvatar = response.data.account.avatar
+      }).catch(() => {
+        this.hasError = true
       })
   }
 
   render() {
-    console.log('rendering', this.statusId, this.instance, this.content)
-    if(!this.statusId || !this.instance || !this.content)  {
-      return;
+    if(!this.content || this.hasError) {
+      return
     }
 
     let content = this.content
@@ -65,12 +69,11 @@ export class MastodonStatus {
             {this.displayName}<br/>
             @{this.username}@{this.instance}
           </span>
-          <span class="post-date"></span>
         </div>
         <div class="content" innerHTML={content}></div>
 
         <div class="footer">
-          <span>{format(this.posted, 'MMM d, yyyy, HH:mm')}</span>
+          <span class="post-date">{format(this.posted, 'MMM d, yyyy, HH:mm')}</span>
           &#183;
           <i class="fa fa-reply fa-fw" aria-hidden="true"></i>
           {this.replies}

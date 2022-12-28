@@ -2,6 +2,7 @@ export declare class MastodonStatus {
   statusId: string;
   instance: string;
   content: string;
+  hasError: boolean;
   posted: Date;
   externalUrl: string;
   replies: number;
@@ -11,6 +12,6 @@ export declare class MastodonStatus {
   displayName: string;
   username: string;
   authorAvatar: string;
-  componentWillRender(): Promise<void>;
+  componentDidLoad(): Promise<void>;
   render(): any;
 }
