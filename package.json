@@ -1,6 +1,6 @@
 {
   "name": "mastodon-status-embed",
-  "version": "0.2",
+  "version": "0.2.0",
   "description": "Web component for embedding a mastodon status by status id",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
